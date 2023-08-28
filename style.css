@@ -157,7 +157,7 @@ body {
   color: var(--font-num-op);
 }
 
-.calc-grid > button:not([data-number]) {
+.calc-grid > button[data-operation] {
   background: var(--operation-btn);
   color: var(--font-num-op);
 }
@@ -171,8 +171,7 @@ body {
   font-size: 2.5rem;
 }
 
-.calc-grid > button[data-all-clear],
-.calc-grid > button[data-delete] {
+.calc-grid > .btn-clean {
   color: var(--text);
   font-size: 1.7rem;
 }
@@ -183,7 +182,7 @@ body {
   }
 }
 
-@media (max-width: 440px) {
+@media (max-width: 450px) {
   .calc-wrapper {
     min-height: 0;
   }
@@ -192,8 +191,29 @@ body {
     border-radius: 0;
     height: 100vh;
     width: 100vw;
-    grid-template-columns: repeat(4, 10vh);
-    grid-template-rows: minmax(120px, auto) repeat(5, 10vh);
+    grid-template-columns: repeat(4, 15vw);
+    grid-template-rows: minmax(120px, auto) repeat(5, 15vw);
     gap: 5vw;
+    padding: 7.5vw;
+  }
+
+  .calc-grid > button {
+    font-size: 8vw;
+  }
+
+  .calc-grid > button[data-operation] {
+    font-size: 9vw;
+  }
+
+  .calc-grid > .btn-clean {
+    font-size: 7vw;
+  }
+
+  .current {
+    font-size: 12vw;
+  }
+
+  .previous {
+    font-size: 6vw;
   }
 }
