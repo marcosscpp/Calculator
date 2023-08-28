@@ -109,8 +109,6 @@ const toggleBtn = toggle.firstElementChild;
 
 toggle.addEventListener("click", () => {
   document.documentElement.classList.toggle('light-mode')
-  toggleBtn.classList.toggle("light");
-  toggleBtn.classList.toggle("dark");
   if (toggleBtn.innerText === "dark_mode") {
     toggleBtn.innerText = "light_mode";
   } else {

@@ -3,35 +3,63 @@
   --body-bg: #0e111d;
   --grid-bg: #171a20;
   --white: #fff;
-  --font-num-op: #29a8ff;
+  --bg-equal: linear-gradient(45deg, var(--icon), #3f51b5);
+  --shadow: #576ea3;
+  --display-text: #fff;
+  --text: #a5a5a5;
+  --icon: #29a8ff;
+  --number-btn: #2e3137;
+  --operation-btn: #616161;
+  --equal-font: #b2daff;
+  --font-num-op: var(--icon);
+  --shadow-toggle: rgba(0, 0, 0, 0.3);
 }
 
 .light-mode:root {
-  --body-bg: #f3f0f0;
-  --grid-bg: linear-gradient(rgba(247, 248, 251, 1), rgba(247, 248, 251, 0.19));
-  --display-text: #fff;
+  --body-bg: #f0e7e9;
+  --grid-bg: #fcf1f1;
+  --white: #fff;
+  --bg-equal: linear-gradient(45deg, var(--font-num-op), var(--icon));
+  --shadow: #bab8b5;
+  --display-text: rgb(24, 23, 24);
+  --text: #554d4f;
+  --icon: #e87918;
+  --number-btn: #e5e5e5;
+  --operation-btn: #e1e1e1;
+  --equal-font: #ffb2c8;
+  --font-num-op: #e8183e;
+  --shadow-toggle: rgba(0, 0, 0, 0.1);
 }
 
 * {
   box-sizing: border-box;
   font-family: "Ubuntu Mono", monospace;
-  transition: background .5s;
+  transition: background 0.5s, color 0.5s;
 }
 
 .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.icon {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
+
+  color: var(--icon);
   background: var(--body-bg);
   border-radius: 100px;
-  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
   font-size: 20px;
   margin: 0 4px;
   max-width: 30px;
-  transition: transform 0.3s, color 0.6s;
+  transition: transform 0.3s;
   padding: 5px;
   overflow: hidden;
+}
+
+.light-mode .icon {
+  transform: translateX(2em) rotate(180deg);
 }
 
 body {
@@ -50,7 +78,7 @@ body {
 .calc-grid {
   background: var(--grid-bg);
   border-radius: 30px;
-  box-shadow: 0px 0px 34px #576ea3;
+  box-shadow: 0px 0px 34px var(--shadow);
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(4, 60px);
@@ -70,6 +98,9 @@ body {
   align-items: center;
   background: var(--white);
   border-radius: 100px;
+  box-shadow: inset 0 8px 60px var(--shadow-toggle),
+    inset 0 8px 8px var(--shadow-toggle), inset 0 -4px 4px var(--shadow-toggle);
+
   cursor: pointer;
   display: flex;
   grid-column: 1 / -1;
@@ -77,18 +108,6 @@ body {
   height: 40px;
   width: 80px;
   z-index: 1;
-}
-
-.dark {
-  color: #ddd;
-}
-
-.light {
-  color: rgb(223, 132, 3);
-}
-
-.light {
-  transform: translateX(2em) rotate(180deg);
 }
 
 .display {
@@ -105,18 +124,18 @@ body {
 
 .current {
   display: block;
-  color: var(--white);
+  color: var(--display-text);
   font-size: 2.2rem;
   height: 35px;
 }
 
 .previous {
-  color: #8aa5b1;
+  color: var(--text);
   font-size: 1.2rem;
 }
 
 .calc-grid > button {
-  background: #2e3137;
+  background: var(--number-btn);
   border: none;
   border-radius: 16px;
   cursor: pointer;
@@ -130,13 +149,13 @@ body {
 }
 
 .calc-grid > button:not([data-number]) {
-  background: #616161;
+  background: var(--operation-btn);
   color: var(--font-num-op);
 }
 
 .calc-grid > button[data-equals] {
-  background: var(--font-num-op);
-  color: #b2daff;
+  background: var(--bg-equal);
+  color: var(--equal-font);
 }
 
 .calc-grid > button[data-operation] {
@@ -145,13 +164,9 @@ body {
 
 .calc-grid > button[data-all-clear],
 .calc-grid > button[data-delete] {
-  color: #a5a5a5;
+  color: var(--text);
   font-size: 1.7rem;
 }
-
-/*box-shadow: inset 0 8px 60px rgba(0,0,0, .1),
-              inset 0 8px 8px rgba(0,0,0, .1),
-              inset 0 -4px 4px rgba(0,0,0, .1);*/
 
 @keyframes spin {
   to {
