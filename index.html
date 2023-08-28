@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!--Icon-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <title>Calculator - JS</title>
+</head>
+
+<body>
+  <section class="calc-wrapper">
+    <div class="calc-grid">
+      <div class="toggle">
+        <span class="material-symbols-outlined dark">
+          dark_mode
+        </span>
+      </div>
+      <div class="display">
+        <div class="previous" data-previous-operand></div>
+        <div class="current" data-current-operand>0</div>
+      </div>
+      <button data-all-clear>AC</button>
+      <button data-delete>DEL</button>
+      <button data-operation>÷</button>
+      <button data-operation>×</button>
+      <button data-number>1</button>
+      <button data-number>2</button>
+      <button data-number>3</button>
+      <button data-operation>-</button>
+      <button data-number>4</button>
+      <button data-number>5</button>
+      <button data-number>6</button>
+      <button data-operation>+</button>
+      <button data-number>7</button>
+      <button data-number>8</button>
+      <button data-number>9</button>
+      <button class="rowspan-two" data-equals>=</button>
+      <button class="colspan-two" data-number>0</button>
+      <button data-number>.</button>
+    </div>
+  </section>
+</body>
+
+</html>
