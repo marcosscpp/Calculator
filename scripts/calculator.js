@@ -1,11 +1,3 @@
-const dataPreviousOperand = document.querySelector("[data-previous-operand]");
-const dataCurrentOperand = document.querySelector("[data-current-operand]");
-const numberButtons = document.querySelectorAll("[data-number]");
-const operationButtons = document.querySelectorAll("[data-operation]");
-const deleteButton = document.querySelector("[data-delete]");
-const allClearButton = document.querySelector("[data-all-clear]");
-const equalButton = document.querySelector("[data-equals]");
-
 class Calculator {
   constructor(previousOperandDOM, currentOperandDOM) {
     this.previousOperandDOM = previousOperandDOM;
@@ -50,7 +42,13 @@ class Calculator {
       case "÷":
         result = prevNum / currentNum;
         break;
+      case "/":
+        result = prevNum / currentNum;
+        break;
       case "×":
+        result = prevNum * currentNum;
+        break;
+      case "*":
         result = prevNum * currentNum;
         break;
       case "-":
@@ -73,45 +71,4 @@ class Calculator {
   }
 }
 
-const calculadora = new Calculator(dataPreviousOperand, dataCurrentOperand);
-
-numberButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    calculadora.appendNum(btn.innerText);
-    calculadora.updateDisplay();
-  });
-});
-
-operationButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    calculadora.choseOperator(btn.innerText);
-    calculadora.updateDisplay();
-  });
-});
-
-equalButton.addEventListener("click", () => {
-  calculadora.calculate();
-  calculadora.updateDisplay();
-});
-
-allClearButton.addEventListener("click", () => {
-  calculadora.clear();
-  calculadora.updateDisplay();
-});
-
-deleteButton.addEventListener("click", () => {
-  calculadora.delete();
-  calculadora.updateDisplay();
-});
-
-const toggle = document.querySelector(".toggle");
-const toggleBtn = toggle.firstElementChild;
-
-toggle.addEventListener("click", () => {
-  document.documentElement.classList.toggle('light-mode')
-  if (toggleBtn.innerText === "dark_mode") {
-    toggleBtn.innerText = "light_mode";
-  } else {
-    toggleBtn.innerText = "dark_mode";
-  }
-});
+export default Calculator;
