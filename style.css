@@ -66,9 +66,14 @@
   transform: translateX(2.3em) rotate(180deg);
 }
 
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background: var(--body-bg);
-  margin: 0;
   padding: 0;
 }
 
@@ -184,19 +189,14 @@ body {
 }
 
 @media (max-width: 450px) {
-  body {
-    background-color: var(--grid-bg );
+  .calc-wrapper {
+    align-items: flex-start;
+    margin-top: 2vw;
   }
   
-  .calc-wrapper {
-    min-height: 0;
-  }
-
   .calc-grid {
-    border-radius: 0;
-    box-shadow: none;
-    height: calc(100vh - 70px);
-    width: 100vw;
+    height: calc(100vh - 70px - 2vw); /*Screen - padding - margi-bottom*/
+    width: 96vw;
     grid-template-columns: repeat(4, 15vw);
     grid-template-rows: minmax(120px, auto) repeat(5, 15vw);
     gap: 5vw;
