@@ -103,6 +103,7 @@ body {
   display: flex;
   grid-column: 1 / -1;
   grid-row: 1;
+  height: fit-content;
 }
 
 .toggle {
@@ -183,18 +184,22 @@ body {
 }
 
 @media (max-width: 450px) {
+  body {
+    background-color: var(--grid-bg );
+  }
+  
   .calc-wrapper {
     min-height: 0;
   }
 
   .calc-grid {
     border-radius: 0;
-    height: 100vh;
+    box-shadow: none;
+    height: calc(100vh - 70px);
     width: 100vw;
     grid-template-columns: repeat(4, 15vw);
     grid-template-rows: minmax(120px, auto) repeat(5, 15vw);
     gap: 5vw;
-    padding: 7.5vw;
   }
 
   .calc-grid > button {
