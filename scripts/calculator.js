@@ -1,5 +1,8 @@
-class Calculator {
+import Conversor from "./conversor.js";
+
+class Calculator extends Conversor {
   constructor(previousOperandDOM, currentOperandDOM) {
+    super();
     this.previousOperandDOM = previousOperandDOM;
     this.currentOperandDOM = currentOperandDOM;
     this.clear();
@@ -68,6 +71,7 @@ class Calculator {
   updateDisplay() {
     this.currentOperandDOM.innerText = this.currentOperand;
     this.previousOperandDOM.innerText = this.previousOperand;
+    console.log(super.toHex(this.currentOperand));
   }
 }
 

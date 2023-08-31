@@ -46,7 +46,7 @@ function calculatorInit(Calculator) {
     calculadora.updateDisplay();
   });
 
-  const numbersKeys = ["1", "2", "3", "4", "5", "6,", "7", "8", "9", "0", "."];
+  const numbersKeys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
   const operationKeys = ["/", "*", "-", "+"];
 
   // Adding key iteractions for the calculator

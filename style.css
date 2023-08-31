@@ -42,11 +42,6 @@
 }
 
 .icon {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-
   align-items: center;
   color: var(--icon);
   background: var(--grid-bg);
@@ -106,9 +101,9 @@ body {
 }
 
 .toggle-wrapper {
-  left: 20px;
+  left: 0;
   position: absolute;
-  top: 20px;
+  top: 0;
 }
 
 .toggle {
@@ -126,6 +121,12 @@ body {
 }
 
 .display {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+
+  
   align-items: flex-end;
   display: flex;
   flex-direction: column;
@@ -143,7 +144,6 @@ body {
   display: block;
   color: var(--display-text);
   font-size: 2.2rem;
-  height: 35px;
 }
 
 .previous {
@@ -220,5 +220,10 @@ body {
 
   .previous {
     font-size: 6vw;
+  }
+
+  .toggle-wrapper {
+    left: 20px;
+    top: 20px;
   }
 }
